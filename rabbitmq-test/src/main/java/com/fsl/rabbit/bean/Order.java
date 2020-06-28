@@ -16,4 +16,6 @@ public class Order implements Serializable {
     private Integer num; //数量
     private Integer memberId; // 会员Id
 
+
+
 }
