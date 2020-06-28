@@ -14,8 +14,6 @@ public class Order implements Serializable {
     private String orderSn;  //订单号
     private Long skuId; //商品Id
     private Integer num; //数量
-    private Integer memberId; // 会员Id
-
-
+    private Integer memberId; // 会员I
 
 }
