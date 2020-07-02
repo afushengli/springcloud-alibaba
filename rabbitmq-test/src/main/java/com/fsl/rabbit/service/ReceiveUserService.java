@@ -67,7 +67,7 @@ public class ReceiveUserService {
     }
 
 
-/*
+    /*
     @RabbitListener(queues = {"order-queue"})
     public void receiveOrder(Order order,Message  message,Channel channel ) throws Exception {
         System.out.println("监听到订单生成。。。。" + order);
@@ -82,15 +82,15 @@ public class ReceiveUserService {
             //multiple  如果是true，表示回复g该队列所有的消息，如果是false，表示只回复本条消息
             // requeue ，如果是 true 该条消息表示重回队列 ，
             // false，表示不重回队列，丢掉本条消息 ,会进入到死信队列
-            // channel.basicNack(message.getMessageProperties().getDeliveryTag(),false,true);
+            channel.basicNack(message.getMessageProperties().getDeliveryTag(),false,true);
             throw new Exception("库存扣除失败");
         }
 
         System.out.println("扣除成功");
         //成功了，只回复本条消息
         channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
-    }
- */
+    }*/
+
 
 
     @RabbitListener(queues = {"user.order.queue"})
